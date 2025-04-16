@@ -7,15 +7,15 @@ public class Main {
         SortingAlgorithm countSort = SortingAlgorithms::countingSort;
         SortingAlgorithm ARUCountSort = SortingAlgorithms::ARUCountingSort;
 
-        int[] nValues = {1000, 10000, 100000, 1000000};
+        int[] nValues = {1000, 5000,10000, 50000,100000, 500000,1000000};
         //double[] kExponents = {3,3.5, 4,4.5, 5,5.5, 6,6.5, 7,7.5, 8,8.5, 9};
-        int numRepeats = 5;
+        int numRepeats = 15;
 
         try (FileWriter outputFile = new FileWriter("sortingTimes3.csv")) {
             outputFile.write("n,k,count_time,aru_time,count_space_bytes,aru_space_bytes\n");
 
             for (int n : nValues) {
-                for (double exp = 3; exp <= 9; exp+=0.1 ){
+                for (double exp = 3; exp <= 9; exp+=0.05 ){
                     int k = (int) Math.pow(10, exp);
                     if (k < n) continue;
 
