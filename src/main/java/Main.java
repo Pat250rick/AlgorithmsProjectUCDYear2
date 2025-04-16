@@ -8,14 +8,14 @@ public class Main {
         SortingAlgorithm ARUCountSort = SortingAlgorithms::ARUCountingSort;
 
         int[] nValues = {1000, 10000, 100000, 1000000};
-        int[] kExponents = {3, 4, 5, 6, 7, 8, 9};
+        double[] kExponents = {3,3.5, 4,4.5, 5,5.5, 6,6.5, 7,7.5, 8,8.5, 9};
         int numRepeats = 5;
 
         try (FileWriter outputFile = new FileWriter("sortingTimes3.csv")) {
             outputFile.write("n,k,count_time,aru_time,count_space_bytes,aru_space_bytes\n");
 
             for (int n : nValues) {
-                for (int exp : kExponents) {
+                for (double exp : kExponents) {
                     int k = (int) Math.pow(10, exp);
                     if (k < n) continue;
 
