@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("sortingTimes3.csv")
+df = pd.read_csv("sortingTimes4.csv")
 df = df.astype({
     'n': int,
     'k': int,
