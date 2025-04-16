@@ -30,8 +30,8 @@ public class Main {
                     double countSeconds = totalCountTime / (numRepeats * 1e9);
                     double aruSeconds = totalARUTime / (numRepeats * 1e9);
 
-                    int countSpaceBytes = 4 * (2 * n + k);
-                    int aruSpaceBytes = 4 * (2 * n + (int) (2 * Math.sqrt(k)));
+                    long countSpaceBytes = (long)4 * ((long)2 * (long)n + (long)k);
+                    long aruSpaceBytes = (long)4 * ((long)2 * (long)n + (int) ((long)2 * (long)Math.sqrt((long)k)));
 
                     System.out.printf("n=%d, k=%d -> count: %.6fs, aru: %.6fs%n", n, k, countSeconds, aruSeconds);
 
