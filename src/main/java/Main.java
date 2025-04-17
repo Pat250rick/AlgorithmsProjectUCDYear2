@@ -10,17 +10,26 @@ public class Main {
         SortingAlgorithm mergeSort = SortingAlgorithms::mergeSort;
         SortingAlgorithm radixSort = SortingAlgorithms::radixSort;
 
-        //int[] nValues = {1000, 5000,10000, 50000,100000, 500000,1000000};
-        //double[] kExponents = {3,3.5, 4,4.5, 5,5.5, 6,6.5, 7,7.5, 8,8.5, 9};
+        //used for getting fixed values for bar charts
+        int[] nValues = {1000, 5000,10000, 50000,100000, 500000,1000000};
+        double[] kExponents = {3,3.5, 4,4.5, 5,5.5, 6,6.5, 7,7.5, 8,8.5, 9};
         int numRepeats = 15;
 
         try (FileWriter outputFile = new FileWriter("sortingTimes5.csv")) {
             outputFile.write("n,k,count_time,aru_time,quick_time,merge_time,radix_time,count_space_bytes,aru_space_bytes\n");
 
-            for (int n = 5000; n <= 1000000; n+=(1000000-5000)/30) {
-                for (double exp = 3; exp <= 8; exp+=(double)(8-3)/(double)30 ){
+//            used for getting random values for other graphs
+//            for (int n = 5000; n <= 1000000; n+=(1000000-5000)/30) {
+//                for (double exp = 3; exp <= 8; exp+=(double)(8-3)/(double)30 ){
+//                    int k = (int) Math.pow(10, exp);
+//                    if (k < n) continue;
+
+            //used for getting fixed values for bar chart
+            for (int n : nValues) {
+                for (double exp : kExponents) {
                     int k = (int) Math.pow(10, exp);
                     if (k < n) continue;
+
 
                     double totalCountTime = 0;
                     double totalARUTime = 0;
