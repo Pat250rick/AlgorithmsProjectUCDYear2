@@ -1,3 +1,3 @@
 public interface SortingAlgorithm {
-    int [] sort (int[] a, int k);
+    int [] sort(int[] a, int k);
 }
